@@ -1,0 +1,204 @@
+<!doctype>
+<html>
+<head>
+<title>ExchangeOrderBook</title>
+<meta charset="utf-8">
+
+
+
+<style>
+ body{
+  /*background-color:191970;*/
+  border:solid thin black;
+  width:410px;
+ }
+
+h1{color:#383838;}
+
+ canvas{
+  border:solid thin red;
+  background-color:gray;
+  padding:4px 4px 4px 4px;
+ }
+
+
+ #bids{
+  background-color:#7cfc00;
+  border:solid thin black;
+  width:195px;
+  height:400px;
+  position:absolute;
+ }
+
+#topbid{background-color:#7cfc00;}
+
+
+ #asks{
+  background-color:#dc143c;
+  border:solid thin black;
+  width:190px;
+  height:400px;
+  position:absolute;
+  left:210px;
+ }
+
+#topask{background-color:#dc143c;}
+
+#volnum{background-color:c0c0c0;}
+#spreadNum{background-color:c0c0c0;}
+
+ /*#buttons{
+  border:solid thin black;
+  position:absoulte;
+  top:429px;
+ }*/
+
+#depthBook{
+  position:absolute;
+  width:30%;
+  top:800px;
+  border:solid thin red;
+  padding:3px 3px 3px 3px;
+}
+
+#bidDepth{
+  border:solid thin black;
+  margin:4px 4px 4px 4px;
+}
+
+#askDepth{
+  border:solid thin black;
+  margin:4px 4px 4px 4px;
+}
+
+table{border:solid thin black; text-align:center;}
+td{border:solid thin black;}
+
+ #footer{
+  position:fixed;
+  bottom:10px;
+ }
+
+</style>
+<!--end of styles -->
+
+</head>
+
+<body>
+<h1>A.I Exchange OrderBook</h1>
+
+<canvas id="chart" width="400px" height="200px" ></canvas>
+
+ <div id="lastTrade">
+  <span>Time</span> <span>%</span>
+ </div>
+
+ <div id="TopSpreads">
+ <span id="topbid">TopBid:1.1111</span>  <span id="spreadNum">Spread:0004</span>
+      <span id="topask">TopAsk:1.1115</span> <span id="volnum">Vol:15.5m</span>
+      <span id="chgPercent">Chg:+.02%</span>
+      <span id="marginAmount">Total Margin:16000.00</span>
+ </div>
+
+ <div id="bids">
+  <!--<h5>bid orderbook</h5>-->
+  <button id="buyMktBt">BuyMkt</button>  
+  <button id="cancelTradeBuy">Cancel</button>  
+  <button id="bidMktBt">BidMkt</button>   <br>
+
+  <table>
+  <th>MMID</th> <th>ORDER</th> <th>PRICE</th>
+
+  <tr>
+   <td>BNB</td> <td>100000</th> <td>1.1110</td>
+  </tr>
+
+  <tr>
+   <td>BNB</td> <td>100000</th> <td>1.1109</td>
+  </tr>
+
+  <tr>
+   <td>BNB</td> <td>100000</th> <td>1.1108</td>
+  </tr>
+
+  <tr>
+   <td>BNB</td> <td>100000</th> <td>1.1107</td>
+  </tr>
+
+  <tr>
+   <td>BNB</td> <td>100000</th> <td>1.1106</td>
+  </tr>
+
+  <tr>
+   <td>BNB</td> <td>100000</th> <td>1.1105</td>
+  </tr>
+
+  <tr>
+   <td>BNB</td> <td>100000</th> <td id="zz">1.1104</td>
+  </tr>
+
+  </table>
+
+ </div>
+
+ <div id="asks">
+  <!--<h5>ask orderbook</h5>-->
+  <button id="sellMktBt">SellMkt</button>
+  <button id="cancelTradeSell">Cancel</button>
+  <button id="askMktBt">AskMkt</button> <br>  
+
+  <table>
+  <th>PRICE</th> <th>ORDER</th> <th>MMID</th>
+
+  <tr>
+   <td>1.1116</td> <td>100000</th> <td>BNB</td>   <!-- onclick=ask();-->
+  </tr>
+
+  <tr>
+   <td>1.1117</td> <td>100000</th> <td>BNB</td>
+  </tr>
+
+  <tr>
+   <td>1.1118</td> <td>100000</th> <td>BNB</td>
+  </tr>
+
+  <tr>
+   <td>1.1119</td> <td>100000</th> <td>BNB</td>
+  </tr>
+
+  <tr>
+   <td id="x">1.1115</td> <td>100000</th> <td>BNB</td>
+  </tr>
+
+  </table>
+ </div>
+
+
+ 
+
+
+
+ <div id="depthBook">
+  <span id="bidDepth">1010101010101010101010
+  </span>
+
+  <span id="askDepth">1010101010101010101010
+  </span>
+
+ </div>
+
+
+
+<footer id="footer"> A.I  EXCHANGE ORDERBOOK </footer>
+
+<!--script tag imports-->
+<!--<script src="level2orderbook.js"></script>-->
+<script src="level2orderbook.js"></script>
+<script src="bidOrderPrice.js"></script>
+<script src="askOrderPrice.js"></script>
+<script src="exchangeSellmkt.js"></script>
+<script src="exchangeBuymkt.js"></script>
+
+</body>
+
+</html>
